@@ -1,20 +1,41 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="yellowbar">
   <ion-toolbar>
     <ion-title>
-      Blank
+      <img src="assets/img/logo.png" alt="FUNE Logo" width="100">
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <img *ngIf="modekids == true" (click)="ablekid()" src="assets/img/kidsmode.png" />
+        <img *ngIf="modekids == false" (click)="ablekid()" src="assets/img/unkidsmode4.png" />
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="settingsPopover($event)">
+        <ion-icon name="book"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content [fullscreen]="true" class="greencontent">
+  <ion-grid>
+    <ion-row style="margin-top: 50px;">
+      <ion-col></ion-col>
+      <ion-col size="10" size-lg>
+        <ion-card class="kartu" (click)="gotomeet()">          
+          <ion-card-header>
+            <img src="assets/img/anak.png" style="width: 10rem;" />    
+          </ion-card-header>
+          <ion-card-content>
+            <ion-card-title style="color: black; font-size: 15px;">10 AM - 12 AM</ion-card-title>
+            <ion-card-subtitle>25 Members</ion-card-subtitle>
+            KELAS TK-A2
+          </ion-card-content>
+        </ion-card>        
+      </ion-col>
+      <ion-col></ion-col>      
+    </ion-row>
+    
+  </ion-grid>
 </ion-content>

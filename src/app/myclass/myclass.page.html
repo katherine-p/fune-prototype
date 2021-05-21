@@ -1,0 +1,299 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="greencontent">
+  <ion-grid>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Favorite Rooms</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ng-template *ngIf="show1==true;then templatefav1"> </ng-template>
+          <ng-template #templatefav1>
+            <ion-col>
+              <ion-item lines="none" style="padding-bottom:10px;">
+                <ion-text>Kelas TK-A</ion-text>
+              </ion-item>
+              <ion-item lines="none"><a href="" class="link">30 members</a></ion-item>
+            </ion-col>
+            <ion-col size="2">
+              <ngtemplate *ngIf="show1==true; then templatetrue1; else templatefalse1"> </ngtemplate>
+            </ion-col>
+            <ion-col size-sm="3">
+              <ion-buttons>
+                <ion-button (click)="startnow()" shape="round" fill="outline" class="btnstart">
+                  <div class="textstart">
+                    Start now
+                  </div>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ng-template>
+        </ion-row>
+    
+        <ion-row>
+          <ng-template *ngIf="show2==true;then templatefav2"> </ng-template>
+          <ng-template #templatefav2>
+            <ion-col>
+              <ion-item lines="none" style="padding-bottom:10px;">
+                <ion-text>Bimbel Ceria</ion-text>
+              </ion-item>
+              <ion-item lines="none"><a href="" class="link">52 members</a></ion-item>
+            </ion-col>
+            <ion-col size="2">
+              <ngtemplate *ngIf="show2==true; then templatetrue2; else templatefalse2"> </ngtemplate>
+            </ion-col>
+            <ion-col size-sm="3">
+              <ion-buttons>
+                <ion-button (click)="startnow()" shape="round" fill="outline" class="btnstart">
+                  <div class="textstart">
+                    Start now
+                  </div>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ng-template>
+        </ion-row>
+    
+        <ion-row>
+          <ng-template *ngIf="show3==true;then templatefav3"> </ng-template>
+          <ng-template #templatefav3>
+            <ion-col>
+              <ion-item lines="none" style="padding-bottom:10px;">
+                <ion-text>Kelas TK-B</ion-text>
+              </ion-item>
+              <ion-item lines="none"><a href="" class="link">33 members</a></ion-item>
+            </ion-col>
+            <ion-col size="2">
+              <ngtemplate *ngIf="show3==true; then templatetrue3; else templatefalse3"> </ngtemplate>
+            </ion-col>
+            <ion-col size-sm="3">
+              <ion-buttons>
+                <ion-button (click)="startnow()" shape="round" fill="outline" class="btnstart">
+                  <div class="textstart">
+                    Start now
+                  </div>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ng-template>
+        </ion-row>
+    
+        <ion-row>
+          <ng-template *ngIf="show4==true;then templatefav4"> </ng-template>
+          <ng-template #templatefav4>
+            <ion-col>
+              <ion-item lines="none" style="padding-bottom:10px;">
+                <ion-text>Sekolah Minggu</ion-text>
+              </ion-item>
+              <ion-item lines="none"><a href="" class="link">10 members</a></ion-item>
+            </ion-col>
+            <ion-col size="2">
+              <ngtemplate *ngIf="show4==true; then templatetrue4; else templatefalse4"> </ngtemplate>
+            </ion-col>
+            <ion-col size-sm="3">
+              <ion-buttons>
+                <ion-button (click)="startnow()" shape="round" fill="outline" class="btnstart">
+                  <div class="textstart">
+                    Start now
+                  </div>
+                </ion-button>
+              </ion-buttons>
+            </ion-col>
+          </ng-template>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Created by me</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none" style="padding-bottom:10px;">
+              <ion-text>Kelas TK-A</ion-text>
+            </ion-item>
+            <ion-item lines="none"><a href="" class="link">30 members</a></ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ng-template *ngIf="show1==true; then templatetrue1;else templatefalse1"> </ng-template>
+
+            <ng-template #templatefalse1>
+              <ion-buttons>
+                <ion-button (click)="clickedfav($event)" class="btnunfav" value="1" id="btn1">
+                  <ion-icon slot="icon-only" name="heart-outline" class="iconfav"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ng-template>
+
+            <ng-template #templatetrue1>
+              <ion-buttons>
+                <ion-button (click)="clickedfav($event)" class="btnfav" value="1" id="btn1" slot="end">
+                  <ion-icon slot="icon-only" name="heart-outline" class="iconfav"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ng-template>
+
+          </ion-col>
+          <ion-col size-sm="3">
+            <ion-buttons>
+              <ion-button (click)="startnow()" shape="round" fill="outline" class="btnstart">
+                <div class="textstart">
+                  Start now
+                </div>
+              </ion-button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none" style="padding-bottom:10px;">
+              <ion-text>Bimbel Ceria</ion-text>
+            </ion-item>
+            <ion-item lines="none"><a href="" class="link">52 members</a></ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ng-template *ngIf="show2==true; then templatetrue2; else templatefalse2"> </ng-template>
+
+            <ng-template #templatefalse2>
+              <ion-buttons>
+                <ion-button (click)="clickedfav($event)" class="btnunfav" value="2" id="btn2">
+                  <ion-icon slot="icon-only" name="heart-outline" class="iconfav"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ng-template>
+
+            <ng-template #templatetrue2>
+              <ion-buttons>
+                <ion-button (click)="clickedfav($event)" class="btnfav" value="2" id="btn2" slot="end">
+                  <ion-icon slot="icon-only" name="heart-outline" class="iconfav"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ng-template>
+
+          </ion-col>
+          <ion-col size-sm="3">
+            <ion-buttons>
+              <ion-button (click)="startnow()" shape="round" fill="outline" class="btnstart">
+                <div class="textstart">
+                  Start now
+                </div>
+              </ion-button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Other Rooms</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none" style="padding-bottom:10px;">
+              <ion-text>Kelas TK-B</ion-text>
+            </ion-item>
+            <ion-item lines="none"><a href="" class="link">33 members</a></ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ng-template *ngIf="show3==true; then templatetrue3;else templatefalse3"> </ng-template>
+
+            <ng-template #templatefalse3>
+              <ion-buttons>
+                <ion-button (click)="clickedfav($event)" class="btnunfav" value="3" id="btn3">
+                  <ion-icon slot="icon-only" name="heart-outline" class="iconfav"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ng-template>
+
+            <ng-template #templatetrue3>
+              <ion-buttons>
+                <ion-button (click)="clickedfav($event)" class="btnfav" value="3" id="btn3" slot="end">
+                  <ion-icon slot="icon-only" name="heart-outline" class="iconfav"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ng-template>
+
+          </ion-col>
+          <ion-col size-sm="3">
+            <ion-buttons>
+              <ion-button (click)="startnow()" shape="round" fill="outline" class="btnstart">
+                <div class="textstart">
+                  Start now
+                </div>
+              </ion-button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item lines="none" style="padding-bottom:10px;">
+              <ion-text>Sekolah Minggu</ion-text>
+            </ion-item>
+            <ion-item lines="none"><a href="" class="link">10 members</a></ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <ng-template *ngIf="show4==true; then templatetrue4; else templatefalse4"> </ng-template>
+
+            <ng-template #templatefalse4>
+              <ion-buttons>
+                <ion-button (click)="clickedfav($event)" class="btnunfav" value="1" id="btn4">
+                  <ion-icon slot="icon-only" name="heart-outline" class="iconfav"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ng-template>
+
+            <ng-template #templatetrue4>
+              <ion-buttons>
+                <ion-button (click)="clickedfav($event)" class="btnfav" value="1" id="btn4" slot="end">
+                  <ion-icon slot="icon-only" name="heart-outline" class="iconfav"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </ng-template>
+
+          </ion-col>
+          <ion-col size-sm="3">
+            <ion-buttons>
+              <ion-button (click)="startnow()" shape="round" fill="outline" class="btnstart">
+                <div class="textstart">
+                  Start now
+                </div>
+              </ion-button>
+            </ion-buttons>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+  </ion-grid>
+
+</ion-content>

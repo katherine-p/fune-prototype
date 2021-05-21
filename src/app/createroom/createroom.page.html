@@ -1,0 +1,139 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="yellowbar">
+    <ion-title>
+      Create New Room
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="greencontent croom">
+  <ion-grid>
+    <ion-row>
+      <ion-col>        
+        <ion-item lines="inset">
+          <ion-label position="stacked" class="stLabel">Room's Name</ion-label>
+          <ion-input type="text" [(ngModel)]="txtroomname" placeholder="TK A1"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="inset">
+          <ion-label position="stacked" class="stLabel">Start Time</ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="2021-02-19T07:43Z" [(ngModel)]="txtstart"></ion-datetime>
+        </ion-item>        
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="inset">
+          <ion-label position="stacked" class="stLabel">End Time</ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="12021-02-19T07:43Z" [(ngModel)]="txtend"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>        
+        <ion-item lines="inset">
+          <ion-label position="stacked" class="stLabel">Room's Name</ion-label>
+          <ion-input value="XgwFtRu98H" readonly></ion-input>
+          <ion-button slot="end" (click)="copycode()" style="margin-left: 0px;" size="small" color="warning" fill="solid" expand="block">Copy</ion-button>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="inset">
+          <ion-label position="stacked" class="stLabel">Add Participants</ion-label>
+          <ion-input type="text" [(ngModel)]="txtemail" placeholder="lala@gmail.com" style="margin-left: 20px;"></ion-input>
+        </ion-item>
+        
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="margin-right: 20px;">
+      <ion-col size="9">      
+      </ion-col>
+      <ion-col size="3">
+        <ion-button (click)="addmember()" size="small" color="warning" fill="solid" expand="block"><ion-icon name="person-add-outline"></ion-icon></ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item style="margin-left: 20px;margin-right: 20px;">
+          <ion-list>
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://www.unicef.org/sites/default/files/styles/hero_desktop/public/UN0243366.jpg?itok=pPArYLci">
+              </ion-avatar>
+              <ion-label>
+                <h2>leonitata@gmail.com</h2>
+              </ion-label>
+            </ion-item>
+      
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhJcYe_8kl9avx_FR73gGYosmIMUdYjffvx44Sqg4J9IodFzTSfzwBtdd-3yhkQ_EA1Sw&usqp=CAU">
+              </ion-avatar>
+              <ion-label>
+                <h2>Hannybrianna@gmail.com</h2>
+              </ion-label>
+            </ion-item>
+      
+            <ion-item>
+              <ion-avatar slot="start">
+                <img src= "https://www.verywellfamily.com/thmb/DUTf87y7J3Lv0d3cxPiVUcqt_gI=/500x350/filters:no_upscale():max_bytes(150000):strip_icc()/181451278-56a258395f9b58b7d0c931fd.jpg">
+              </ion-avatar>
+              <ion-label>
+                <h2>bendonny@gmail.com</h2>
+              </ion-label>
+            </ion-item>
+      
+            <ion-item *ngIf="memberbaru == true">
+              <ion-avatar slot="start">
+                <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL0ih2AsP_1JIp4l89CJZ01YbINMDyzEfyoA&usqp=CAU">
+              </ion-avatar>
+              <ion-label>
+                <h2>matt@gmail.com</h2>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-item>        
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+      </ion-col>
+  
+      <ion-col size="4">
+        <ion-button (click)="create()" style="margin-left: 20px; margin-right: 20px; margin-top: 40px;" size="small" color="warning" fill="solid" expand="block">Create</ion-button><br><br>
+      </ion-col>
+  
+      <ion-col size="4">
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  
+
+
+  <ion-row>
+    
+  </ion-row>
+  
+  
+
+  
+
+  
+  
+</ion-content>
