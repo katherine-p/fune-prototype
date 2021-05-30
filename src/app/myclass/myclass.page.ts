@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-myclass',
@@ -13,10 +14,14 @@ export class MyclassPage implements OnInit {
   show3: boolean = false;
   show4: boolean = false;
 
-  constructor(public loadingController: LoadingController) { }
+  constructor(public loadingController: LoadingController, private router: Router) { }
 
   ngOnInit() {
     
+  }
+
+  gotodetail(){
+    this.router.navigate(["/detailclass"]);
   }
 
   clickedfav(event) {    

@@ -1,0 +1,241 @@
+<ion-header [translucent]="true" class="yellowbar">
+  <ion-toolbar>
+    <ion-title>detailclass</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button  shape="round" fill="outline" class="btnstart" (click)="deleteroom()">
+        <div class="textstart">
+          <ion-icon name="trash-outline" style="color: black;"></ion-icon>
+          Delete Room
+        </div>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-button class="btnstart" slot="end" (click)="deleteroom()" shape="round" background-color="red"><ion-icon name="trash-outline"></ion-icon>
+      <ion-label>Delete Room</ion-label></ion-button> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+  <ion-grid>
+    <ion-row class="col" style="margin-bottom: 5%;">
+      <ion-col>
+        <ion-label style="font-size: 200%; color: black">Math XI2 8AM-10AM</ion-label>
+      </ion-col>
+      <ion-col style="text-align: right;">
+        <ion-label style="color: black;">Code ASD12</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="col2">
+      <ion-col>
+        <ion-label style="color: black;">Host</ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;">
+        <ion-label style="color: black;">2 Host</ion-label>
+      </ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="person-add" (click)="addhost()" style="color: black;"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">yenita2210@gmail.com</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">rani@gmail.com</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="close-circle" style="color: black;"></ion-icon>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="emailhost!=''" class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">{{emailhost}}</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="close-circle" (click)="cancelhos()" style="color: black;"></ion-icon>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row class="col2">
+      <ion-col>
+        <ion-label style="color: black;">Members</ion-label>
+      </ion-col>
+      <ion-col style="text-align: center;">
+        <ion-label style="color: black;">30 Members</ion-label>
+      </ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="person-add" (click)="addmem()" style="color: black;"></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">feronica@gmail.com</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="close-circle" style="color: black;"></ion-icon>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">katherine@gmail.com</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="close-circle" style="color: black;"></ion-icon>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">saskiazz@gmail.com</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="close-circle" style="color: black;"></ion-icon>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">gaby@gmail.com</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="close-circle" style="color: black;"></ion-icon>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">rara@gmail.com</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="close-circle" style="color: black;"></ion-icon>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">riri@gmail.com</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="close-circle" style="color: black;"></ion-icon>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="emailmem!=''" class="rowcon">
+      <ion-col style="text-align: center;">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+      </ion-col>
+      <ion-col>
+        <ion-label style="color: black;">{{emailmem}}</ion-label>
+      </ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col style="text-align: right;">
+        <ion-icon name="close-circle" (click)="cancelmem()" style="color: black;"></ion-icon>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

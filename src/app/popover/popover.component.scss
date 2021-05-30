@@ -7,3 +7,15 @@
     --ion-item-background:#FAF0D7 !important;
     color: black;
 }
+
+.alert-wrapper {
+    background: #ccfa83;
+  }
+.my-custom-class .alert-wrapper {
+background-color: #ccfa83;
+}
+
+.my-custom-class {
+--background-color: #ccfa83;
+
+}

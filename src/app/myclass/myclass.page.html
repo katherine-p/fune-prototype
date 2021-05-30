@@ -19,7 +19,7 @@
         <ion-row>
           <ng-template *ngIf="show1==true;then templatefav1"> </ng-template>
           <ng-template #templatefav1>
-            <ion-col>
+            <ion-col (click)="gotodetail()">
               <ion-item lines="none" style="padding-bottom:10px;">
                 <ion-text>Kelas TK-A</ion-text>
               </ion-item>
@@ -123,7 +123,7 @@
     <ion-item>
       <ion-grid>
         <ion-row>
-          <ion-col>
+          <ion-col (click)="gotodetail()">
             <ion-item lines="none" style="padding-bottom:10px;">
               <ion-text>Kelas TK-A</ion-text>
             </ion-item>
