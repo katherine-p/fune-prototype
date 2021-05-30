@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-myclass',
@@ -12,10 +13,10 @@ export class MyclassPage implements OnInit {
   show3: boolean = false;
   show4: boolean = false;
 
-  constructor() { }
+  constructor(public loadingController: LoadingController) { }
 
   ngOnInit() {
-    // this.show= this.globalvar.getboolean();
+    
   }
 
   clickedfav(event) {    
@@ -64,6 +65,24 @@ export class MyclassPage implements OnInit {
         this.show4 = true;
       }
     }
+  }
 
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      spinner: 'bubbles',
+      cssClass: 'my-custom-class',
+      message: 'Joining class',
+      duration: 1000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
+  }
+
+  startnow()
+  {
+    this.presentLoading().then(() => { window.location.href = "http://localhost/fune" });
+    
   }
 }
