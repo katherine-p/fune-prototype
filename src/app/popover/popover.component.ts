@@ -66,7 +66,23 @@ export class PopoverComponent implements OnInit {
   joinclass() {
     // code for setting wifi option in apps
     this.popoverController.dismiss();
-    this.router.navigate(["joinclass"]);
+    this.presentAlert();
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: "Room's Code",
+      inputs: [
+        {
+          name: 'kode',
+          placeholder: 'ASD12'
+        }
+      ],
+      buttons: ['Join Now']
+    });
+
+    await alert.present();
   }
 
   myclass() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-myclass',
@@ -12,10 +13,14 @@ export class MyclassPage implements OnInit {
   show3: boolean = false;
   show4: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     // this.show= this.globalvar.getboolean();
+  }
+
+  gotodetail(){
+    this.router.navigate(["/detailclass"]);
   }
 
   clickedfav(event) {    
