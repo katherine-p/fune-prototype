@@ -5,8 +5,8 @@
     </ion-title>
     <ion-buttons slot="end">
       <ion-button>
-        <img *ngIf="modekids == true" (click)="ablekid()" src="assets/img/kidsmode.png" width="30"/>
-        <img *ngIf="modekids == false" (click)="ablekid()" src="assets/img/unkidsmode4.png" width="30"/>
+        <img *ngIf="modestat == true" (click)="ablekid()" src="assets/img/kidsmode.png" width="30"/>
+        <img *ngIf="modestat == false" (click)="ablekid()" src="assets/img/unkidsmode4.png" width="30"/>
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
@@ -28,7 +28,7 @@
           </ion-card-header>
           <ion-card-content>
             <ion-card-title style="color: black; font-size: 15px;">10 AM - 12 AM</ion-card-title>
-            <ion-card-subtitle>25 Members</ion-card-subtitle>
+            <ion-card-subtitle>30 Members</ion-card-subtitle>
             KELAS TK-A2
           </ion-card-content>
         </ion-card>        

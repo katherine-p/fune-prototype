@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ModalController, PopoverController } from '@ionic/angular';
 import { PopoverComponent } from '../popover/popover.component';
 import { AlertController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
+import { GlobalvarService } from '../globalvar.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +11,12 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['home.page.scss', '../app.component.scss'],
 })
 export class HomePage {
-  modekids = true;
+  modestat;
   popup = false;
 
-  constructor(public popoverController: PopoverController, public modalController: ModalController, public alertController: AlertController) {}
+  constructor(public popoverController: PopoverController, public modalController: ModalController, public alertController: AlertController, public loadingController: LoadingController, public globarvar: GlobalvarService) {
+    this.modestat = this.globarvar.modekids;
+  }
 
   // ngOnInit()
   // {
@@ -59,11 +63,32 @@ export class HomePage {
   }
   
   ablekid(){
-    this.modekids = !this.modekids;
-    console.log(this.modekids);
-  }
-  gotomeet(){
-    window.open('https://meet.google.com/avm-guoz-pax', '_system');
+    if(this.modestat == true)
+    {
+      this.modestat = false;
+      this.globarvar.modekids = false;
+    }
+    else
+    {
+      this.modestat = true;
+      this.globarvar.modekids = true;
+    }
   }
 
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      spinner: 'bubbles',
+      cssClass: 'my-custom-class',
+      message: 'Joining class',
+      duration: 1000
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
+  }
+
+  gotomeet(){
+    this.presentLoading().then(() => { window.location.href = "http://localhost/fune" });
+  }
 }
