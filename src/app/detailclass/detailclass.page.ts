@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-detailclass',
@@ -11,13 +13,52 @@ export class DetailclassPage implements OnInit {
   emailhost="";
   emailmem="";
   em;
-  constructor(private alertCtrl: AlertController) { }
+  constructor(private alertCtrl: AlertController, public loadingController: LoadingController, private router: Router) { }
 
   ngOnInit() {
   }
 
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      spinner: 'bubbles',
+      cssClass: 'my-custom-class',
+      message: '',
+      duration: 800
+    });
+    await loading.present();
+
+    const { role, data } = await loading.onDidDismiss();
+    console.log('Loading dismissed!');
+  }
+
+  async deleteAlert() {
+    const alert = await this.alertCtrl.create({
+      cssClass: 'my-custom-class',
+      header: 'Confirm Delete',
+      message: 'Are you sure to delete this class?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Confirm Cancel: blah');
+          }
+        }, {
+          text: 'Yes',
+          handler: () => {
+            console.log('Confirm Okay');
+            this.presentLoading().then(()=> this.router.navigate(["home"]));
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
   deleteroom(){
-    alert("suk delete");
+    this.deleteAlert();
   }
 
   addhost(){

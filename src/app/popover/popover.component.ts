@@ -4,7 +4,6 @@ import { PopoverController } from '@ionic/angular';
 import { AlertController } from '@ionic/angular';
 import { LoadingController } from '@ionic/angular';
 import { GlobalvarService } from '../globalvar.service';
-import { HomePage } from '../home/home.page';
 
 @Component({
   selector: 'app-popover',
